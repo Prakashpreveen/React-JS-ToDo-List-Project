@@ -1,6 +1,7 @@
 import React from "react";
 
 const Board = ({ task, index, taskList, setTasklist }) => {
+  //Delete Note using OnClick:
   const DeleteHandler = () => {
     let removeIndex = taskList.indexOf(task);
     taskList.splice(removeIndex, 1);

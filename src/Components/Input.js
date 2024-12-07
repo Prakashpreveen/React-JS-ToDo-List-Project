@@ -3,12 +3,13 @@ import React, { useState, useEffect, useRef } from "react";
 const Input = ({ taskList, setTasklist }) => {
   const [input, setInput] = useState("");
 
+  //STARTING FOCUS USING useEffect:
   const Myref = React.useRef();
-
   useEffect(() => {
     Myref.current.focus();
   });
 
+  //GET DATA FROM LOCALSTORAGE:
   useEffect(() => {
     const storedTasks = JSON.parse(localStorage.getItem("tasks"));
     if (storedTasks) {
@@ -16,6 +17,7 @@ const Input = ({ taskList, setTasklist }) => {
     }
   }, [setTasklist]);
 
+  //SET DATA FROM LOCALSTORAGE:
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskList));
   }, [taskList]);
